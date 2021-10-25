@@ -12,12 +12,12 @@
             <RowDefinition Height="163*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="279*"/>
-            <ColumnDefinition Width="313*"/>
-            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="257*"/>
+            <ColumnDefinition Width="305*"/>
+            <ColumnDefinition Width="230*"/>
         </Grid.ColumnDefinitions>
 
-        <ListView x:Name="lvClient" Margin="10" MouseDoubleClick="MouseDoubleClick">
+        <ListView x:Name="lvClient" Margin="10" MouseDoubleClick="ClicOnClient">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Карта"  Width="Auto" DisplayMemberBinding="{Binding Key.TypeAccount, Mode=OneWay}"></GridViewColumn>
@@ -58,12 +58,20 @@
         <TextBox x:Name="AccountIn" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9,71,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="146"/>
         <TextBox x:Name="AccountFromValue" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="109,132,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="85"/>
 
-        <Button Content="Перевести" Grid.Column="1" HorizontalAlignment="Left" Margin="109,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0,0.35" Click="Button_Click" Height="20"/>
-        <Button Content="Внести деньги" Grid.Column="1" HorizontalAlignment="Left" Margin="10,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0,0.35" Click="Button_Click_1" Height="20"/>
+        <Button Content="Перевести" Grid.Column="1" HorizontalAlignment="Left" Margin="109,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0,0.35" Click="ButtonPerevod" Height="20"/>
+        <Button Content="Внести деньги" Grid.Column="1" HorizontalAlignment="Left" Margin="10,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0,0.35" Click="ButtonDeposit" Height="20"/>
 
         <TextBox x:Name="AccountOut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="160,71,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="160,47,0,0" Grid.Row="1" TextWrapping="Wrap" Text="р\с для списаний" VerticalAlignment="Top" Width="104" Height="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="143" Width="259"><Run Text="Капитализация для "/><Run Text="Dt "/><LineBreak/><Run Text="Увелечения долга для "/><Run Text="Kt "/><LineBreak/><Run Text=" -"/><Run Text="по двойному щелчку мыши в таблице"/><Run Text=" "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="143" Width="259" Grid.ColumnSpan="2"><Run Text="Капитализация для "/><Run Text="Dt "/><LineBreak/><Run Text="Увелечения долга для "/><Run Text="Kt "/><LineBreak/><Run Text=" -"/><Run Text="по двойному щелчку мыши в таблице"/><Run Text=" "/></TextBlock>
+
+        <ListView Name="lvLogs" Grid.Column="2" Width="Auto"   Margin="10" Grid.Row="1" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Logs"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
 
     </Grid>
