@@ -14,12 +14,38 @@
         public decimal Value { get; set; }
         public BankAccount(Person person, ulong account, TypeAccounts typeAccounts, decimal value)
         {
-            Account = account;
+            if (account.ToString().Length == 20)
+                Account = account;
+            else throw new BankAccountException($"длина счете - {account.ToString().Length} отличается от заданой - 20"); 
+
             IOpen = true;
             TypeAccount = typeAccounts;
             Owner = person;
             Value = value;
         }
+       
+        /// <summary>
+        /// узнать сумму счетов
+        /// </summary>
+        /// <param name="ac1"></param>
+        /// <param name="ac2"></param>
+        /// <returns></returns>
+        public static decimal operator +(BankAccount<T> ac1, BankAccount<T> ac2)
+        {
+            return (ac1.Value + ac2.Value);
+        }
+
+        /// <summary>
+        /// установка акаунта c проверкой на длину
+        /// </summary>
+        /// <param name="account"></param>
+        public void SetAccount (ulong account)
+        {
+            if (account.ToString().Length == 20)
+                Account = account;
+            else throw new BankAccountException($"длина счете - {account.ToString().Length} отличается от заданой - 20");
+        }
+
 
         /// <summary>
         /// обобщение

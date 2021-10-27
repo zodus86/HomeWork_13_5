@@ -5,17 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using BankLibrary;
 
 namespace HomeWork_13_5
 {
+
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -29,17 +24,22 @@ namespace HomeWork_13_5
         {
             InitializeComponent();
             bank = new Bank();
+            bank.CreateBank();
             logs = new ObservableCollection<string>();
             AddLog = CreateLogs;
-            AddLog?.Invoke("Вы вошли в программу!");
-
-            bank.CreateBank();
+            
+            AddLog?.Invoke(bank.Print());
 
             lvLogs.ItemsSource = logs;
             lvClient.ItemsSource = bank.clients;
             lvPersons.ItemsSource = bank.persons;
             lvAccount.ItemsSource = bank.bankAccounts;
-            
+
+            //Сумма первых счетов
+            decimal sum = bank.bankAccounts[0] + bank.bankAccounts[1];
+
+            //Библиотека
+            string randomStr = RandomStr.RandomText();
         }
         
         /// <summary>

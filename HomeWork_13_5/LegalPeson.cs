@@ -7,9 +7,13 @@
         public string Name { get; set; }
         public LegalPeson(string name, ulong telephonNumber)
         {
+            if (telephonNumber.ToString().Length > 3)
+                TelephonNumber = telephonNumber;
+            else throw new BankPersonException("Очень короткий телефон");
+
             Name = name;
             TypePerson = TypePersons.Legal;
-            TelephonNumber = telephonNumber;
+
         }
 
         /// <summary>

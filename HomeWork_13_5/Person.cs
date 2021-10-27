@@ -15,8 +15,10 @@ namespace HomeWork_13_5
 
         public Person (string fullName, ulong telephonNumber, TypePersons typePersons)
         {
+            if (telephonNumber.ToString().Length > 3)
+                TelephonNumber = telephonNumber;
+            else throw new BankPersonException("Очень короткий телефон");
             FullName = fullName;
-            TelephonNumber = telephonNumber;
             TypePerson = typePersons;
         }
     }

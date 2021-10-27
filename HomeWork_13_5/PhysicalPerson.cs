@@ -17,9 +17,12 @@
 
         public PhysicalPerson(string lastName, string firstName, ulong telephonNumber)
         {
+            if (telephonNumber.ToString().Length > 3)
+                TelephonNumber = telephonNumber;
+            else throw new BankPersonException("Очень короткий телефон");
+
             LastName = lastName;
             FirstName = firstName;
-            TelephonNumber = telephonNumber;
             TypePerson = TypePersons.Physical;
         }
 
