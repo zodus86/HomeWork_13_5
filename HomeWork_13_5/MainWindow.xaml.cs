@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using BankLibrary;
+using BankLibr;
 
 namespace HomeWork_13_5
 {
@@ -39,7 +39,8 @@ namespace HomeWork_13_5
             decimal sum = bank.bankAccounts[0] + bank.bankAccounts[1];
 
             //Библиотека
-            string randomStr = RandomStr.RandomText();
+            SaveLogs.SaveJSON(logs,"_bd.json");
+            SaveLogs.SaveXML(logs, "_bd.XML");
         }
         
         /// <summary>

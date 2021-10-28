@@ -16,7 +16,11 @@
         {
             if (account.ToString().Length == 20)
                 Account = account;
-            else throw new BankAccountException($"длина счете - {account.ToString().Length} отличается от заданой - 20"); 
+            else
+            {
+                throw new BankException($"длина счете - {account.ToString().Length} отличается от заданой - 20",
+                                        "Конструктор - BankAccount");
+            }
 
             IOpen = true;
             TypeAccount = typeAccounts;
@@ -39,13 +43,16 @@
         /// установка акаунта c проверкой на длину
         /// </summary>
         /// <param name="account"></param>
-        public void SetAccount (ulong account)
+        public void SetAccount(ulong account)
         {
             if (account.ToString().Length == 20)
                 Account = account;
-            else throw new BankAccountException($"длина счете - {account.ToString().Length} отличается от заданой - 20");
+            else
+            {
+                throw new BankException($"длина счете - {account.ToString().Length} отличается от заданой - 20",
+                "метод - SetAccount");
+            }
         }
-
 
         /// <summary>
         /// обобщение

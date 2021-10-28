@@ -57,7 +57,8 @@ namespace HomeWork_13_5
                 }
             }catch (BankException ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.Method);
+                Console.WriteLine(ex.Message);
             }
         }
 

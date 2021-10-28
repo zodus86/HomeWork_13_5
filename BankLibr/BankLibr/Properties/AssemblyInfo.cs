@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
-[assembly: AssemblyTitle("BankLibrary")]
+[assembly: AssemblyTitle("BankLibr")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BankLibrary")]
+[assembly: AssemblyProduct("BankLibr")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("54c75c11-4a2c-4d39-91ab-d3e9c29e295a")]
+[assembly: Guid("a8a87a7e-d8c3-4baa-8f10-2f5643f1ab25")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

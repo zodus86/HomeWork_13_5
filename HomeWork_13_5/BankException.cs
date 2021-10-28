@@ -3,10 +3,19 @@
 namespace HomeWork_13_5
 {
     /// <summary>
-    /// оьщее для системы банка
+    /// исключения банка
     /// </summary>
     public class BankException : Exception
     {
-        public BankException(string msg) : base (msg) { }
+        public string Method;
+        /// <summary>
+        /// исключения внутри банковской системы
+        /// </summary>
+        /// <param name="msg">Сообщения</param>
+        /// <param name="method">Метод вызвавшыи исключения</param>
+        public BankException(string msg, string method) : base (msg) 
+        {
+            Method = method;
+        }
     }
 }

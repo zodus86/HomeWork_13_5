@@ -64,11 +64,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BankAccountException.cs" />
     <Compile Include="Bank.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="BankException.cs" />
-    <Compile Include="BankPersonException.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IAccount.cs" />
     <Compile Include="IPerson.cs" />
@@ -109,9 +107,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BankLibrary\BankLibrary\BankLibrary.csproj">
-      <Project>{4cc47815-6cc9-4b45-b04b-9ce58b8373c2}</Project>
-      <Name>BankLibrary</Name>
+    <ProjectReference Include="..\BankLibr\BankLibr\BankLibr.csproj">
+      <Project>{a8a87a7e-d8c3-4baa-8f10-2f5643f1ab25}</Project>
+      <Name>BankLibr</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

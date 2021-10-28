@@ -19,7 +19,8 @@
         {
             if (telephonNumber.ToString().Length > 3)
                 TelephonNumber = telephonNumber;
-            else throw new BankPersonException("Очень короткий телефон");
+            else 
+                throw new BankException("Очень короткий телефон", "Конструктор - PhysicalPerson");
 
             LastName = lastName;
             FirstName = firstName;
